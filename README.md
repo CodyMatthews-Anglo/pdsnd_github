@@ -7,7 +7,6 @@
 Project 3 - Bikeshare Repository
 
 ### Description
-Describe what your project is about and what it does
 This project filters and displays bikeshare data for the cities of Chicago, New York ,and Washington
 
 ### Files used
