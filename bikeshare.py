@@ -144,7 +144,11 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -179,7 +183,11 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trip.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -210,7 +218,11 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """
+    Displays statistics on the total and average trip duration.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -229,7 +241,11 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -273,6 +289,8 @@ def show_raw_data(df):
     """
     Incrementally prints the next 5 lines of the given DataFrame until the end is reached,
     or the user cancels at the prompt.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
     """
     user_input = input('Would you like to display the raw data for this filter? (Y/N): ')
     
@@ -295,7 +313,12 @@ def show_raw_data(df):
         print('Not showing raw data.\n')
 
 def chunker(df, size=5):
-    """Returns the next 5 rows of the given DataFrame"""
+    """
+    Returns the next size rows of the given DataFrame
+    Args:
+        (Pandas DataFrame) df - DataFrame containing the filtered city data
+        (int) size - the number of lines to split the DataFrame into. Default: 5
+    """
     for start in range(0, df.shape[0], size):
         #get end point
         end = min(start + size, df.shape[0])
@@ -306,7 +329,11 @@ def chunker(df, size=5):
         yield next_chunk, start, end-1
 
 def log_print(text):
-    """Prints the input to console only if the LOGGING global variable is enabled"""
+    """
+    Prints the input to console only if the LOGGING global variable is enabled
+    Args:
+        (str) text - The text to print
+    """
     if LOGGING:
         print(text)
 
@@ -336,6 +363,6 @@ def main():
             print('\n\nKeyboard Interrupt detected. Exiting program.')
             break
 
-
+#run main if this file is not an import
 if __name__ == "__main__":
 	main()
