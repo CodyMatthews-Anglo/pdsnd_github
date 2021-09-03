@@ -314,8 +314,11 @@ def main():
     """ The main body of the program."""
     while True:
         try:
+            #ask user for data filters
             city, month, day = get_filters()
+            #load data into DataFrame
             df = load_data(city, month, day)
+            #run statistics if df has data
             if not df.empty:
                 time_stats(df)
                 station_stats(df)
@@ -324,10 +327,12 @@ def main():
                 show_raw_data(df)
             else:
                 print('There is no data to display for this filter.')
+            #prompt user for restart
             restart = input('\nWould you like to restart? (Y/N).\n')
             if restart.lower() != 'y':
                 break
         except KeyboardInterrupt:
+            #gracefully exit the program on ctrl+c intercept
             print('\n\nKeyboard Interrupt detected. Exiting program.')
             break
 
