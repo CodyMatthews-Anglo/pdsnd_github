@@ -311,6 +311,7 @@ def log_print(text):
         print(text)
 
 def main():
+    """ The main body of the program."""
     while True:
         try:
             city, month, day = get_filters()
